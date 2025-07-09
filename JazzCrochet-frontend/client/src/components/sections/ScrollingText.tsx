@@ -1,0 +1,1 @@
+//animated banner section with scrolling text

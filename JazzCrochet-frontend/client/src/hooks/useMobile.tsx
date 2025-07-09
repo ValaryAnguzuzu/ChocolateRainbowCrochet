@@ -1,0 +1,1 @@
+//reusable logic for animation triggers, responsive behavior
