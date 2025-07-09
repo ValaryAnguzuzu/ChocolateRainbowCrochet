@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoImage from "../../assets/brand-logo.png"; 
+import logoImage from "../../assets/brand-logo.png";
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,9 +41,14 @@ const Navigation: React.FC = () => {
             alt="Jasmine Peña Logo"
             className="h-10 w-auto object-contain"
           />
-          <span className="ml-2 text-xl font-bold text-gray-800">
-            Jasmine Peña
-          </span>
+          <div className="ml-2">
+            <span className="text-lg font-bold text-gray-800 block">
+              Jasmine Liana Peña
+            </span>
+            <span className="text-sm text-gray-600 block">
+              Chocolate Rainbow Crochet
+            </span>
+          </div>
         </motion.div>
 
         {/* Desktop Navigation */}
