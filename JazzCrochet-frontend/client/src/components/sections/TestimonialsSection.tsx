@@ -155,7 +155,7 @@ function TestimonialsSection() {
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-4">
                   <motion.div
-                    className={`bg-gradient-to-br ${testimonial.gradient} rounded-3xl p-8 text-white shadow-2xl mx-auto max-w-md relative overflow-hidden`}
+                    className="bg-white rounded-3xl p-8 shadow-2xl mx-auto max-w-md relative overflow-hidden border border-gray-100"
                     initial={{ opacity: 0, y: 50, scale: 0.9 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -166,8 +166,8 @@ function TestimonialsSection() {
                     }}
                   >
                     {/* Quote Icon */}
-                    <div className="absolute top-4 right-4 opacity-20">
-                      <Quote size={48} />
+                    <div className="absolute top-4 right-4 opacity-10">
+                      <Quote size={48} className="text-gray-300" />
                     </div>
 
                     {/* Profile Section */}
@@ -203,7 +203,7 @@ function TestimonialsSection() {
 
                     {/* Quote */}
                     <motion.p
-                      className="text-lg mb-6 text-center leading-relaxed font-medium"
+                      className="text-lg mb-6 text-center leading-relaxed font-medium text-gray-800"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.3 }}
@@ -214,16 +214,16 @@ function TestimonialsSection() {
 
                     {/* Author Info */}
                     <motion.div
-                      className="text-center border-t border-white/20 pt-4"
+                      className="text-center border-t border-gray-200 pt-4"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
                       viewport={{ once: true }}
                     >
-                      <h4 className="font-bold text-xl mb-1">
+                      <h4 className="font-bold text-xl mb-1 text-gray-800">
                         {testimonial.name}
                       </h4>
-                      <p className="text-sm opacity-90 font-medium">
+                      <p className="text-sm font-medium text-gray-600">
                         {testimonial.title}
                       </p>
                     </motion.div>
