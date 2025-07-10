@@ -172,7 +172,7 @@ function ServicesSection() {
 
                   {/* Service Icon */}
                   <motion.div
-                    className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center shadow-lg`}
+                    className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -244,7 +244,7 @@ function ServicesSection() {
 
                 {/* Floating Elements on Card */}
                 <motion.div
-                  className="absolute -top-2 -right-2 w-4 h-4 bg-pastel-pink rounded-full opacity-60"
+                  className="absolute -top-2 -right-2 w-4 h-4 bg-white rounded-full opacity-60"
                   animate={{
                     scale: [1, 1.5, 1],
                     opacity: [0.6, 0.3, 0.6],
@@ -256,7 +256,7 @@ function ServicesSection() {
                   }}
                 />
                 <motion.div
-                  className="absolute -bottom-2 -left-2 w-3 h-3 bg-pastel-purple rounded-full opacity-60"
+                  className="absolute -bottom-2 -left-2 w-3 h-3 bg-white rounded-full opacity-60"
                   animate={{
                     scale: [1, 1.3, 1],
                     opacity: [0.6, 0.2, 0.6],
@@ -282,7 +282,7 @@ function ServicesSection() {
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-gradient-to-r from-pastel-purple to-pastel-pink text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all duration-300"
+            className="bg-gradient-to-br from-pink-400 to-purple-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:opacity-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 15px 35px rgba(0,0,0,0.2)",
