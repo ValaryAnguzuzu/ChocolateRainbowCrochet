@@ -62,10 +62,24 @@ function HeroSection() {
               >
                 "My name is Jasmine Peña, and I'm a lived experience advocate,
                 healing facilitator, and founder of{" "}
-                <span className="font-semibold text-pastel-purple">
-                  Jasmine Liana Livingston Peña, LLC
-                </span>
-                . I work at the intersection of trauma, healthcare ethics, and
+                <motion.span className="font-semibold text-pastel-purple">
+                  {"Jasmine Liana Livingston Peña, LLC."
+                    .split("")
+                    .map((char, index) => (
+                      <motion.span
+                        key={index}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          duration: 0.1,
+                          delay: 2 + index * 0.05,
+                        }}
+                      >
+                        {char === " " ? "\u00A0" : char}
+                      </motion.span>
+                    ))}
+                </motion.span>{" "}
+                I work at the intersection of trauma, healthcare ethics, and
                 creative healing."
               </motion.p>
 
