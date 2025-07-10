@@ -156,7 +156,7 @@ function BlogSection() {
   return (
     <section
       id="blog"
-      className="py-20 bg-gradient-to-br from-warm-cream to-white relative overflow-hidden"
+      className="py-20 bg-pastel-purple relative overflow-hidden"
     >
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -194,7 +194,7 @@ function BlogSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Insights & Stories
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -268,7 +268,7 @@ function BlogSection() {
 
                 {/* Title */}
                 <motion.h3
-                  className="text-xl font-bold text-gray-800 mb-3 group-hover:text-pastel-purple transition-colors duration-300"
+                  className="text-xl font-bold text-gray-800 mb-6 group-hover:text-pastel-purple transition-colors duration-300"
                   whileHover={{ x: 5 }}
                 >
                   {post.title}

@@ -68,7 +68,7 @@ function VideosSection() {
   return (
     <section
       id="videos"
-      className="py-20 bg-gradient-to-br from-warm-cream to-white relative overflow-hidden"
+      className="py-20 bg-pastel-purple relative overflow-hidden"
     >
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -119,7 +119,7 @@ function VideosSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Healing in Action
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -192,7 +192,7 @@ function VideosSection() {
               {/* Content Section */}
               <div className="p-6">
                 <motion.h3
-                  className="text-xl font-bold text-gray-800 mb-3 group-hover:text-pastel-purple transition-colors duration-300"
+                  className="text-xl font-bold text-gray-800 mb-6 group-hover:text-pastel-purple transition-colors duration-300"
                   whileHover={{ x: 5 }}
                 >
                   {video.title}

@@ -79,7 +79,7 @@ function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-20 bg-gradient-to-br from-warm-cream to-white relative overflow-hidden"
+      className="py-20 bg-warm-cream relative overflow-hidden"
     >
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -130,7 +130,7 @@ function ServicesSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Healing Programs & Services
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -196,7 +196,7 @@ function ServicesSection() {
                 {/* Content */}
                 <div className="p-6">
                   <motion.h3
-                    className={`text-xl font-bold text-gray-800 mb-3 group-hover:${service.color} transition-colors duration-300`}
+                    className={`text-xl font-bold text-gray-800 mb-6 group-hover:${service.color} transition-colors duration-300`}
                     whileHover={{ x: 5 }}
                   >
                     {service.title}

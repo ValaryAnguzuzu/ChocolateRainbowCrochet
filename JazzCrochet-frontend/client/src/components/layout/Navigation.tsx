@@ -19,6 +19,11 @@ const Navigation: React.FC = () => {
   ];
 
   const scrollTo = (id: string) => {
+    if (id === "#home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setIsMenuOpen(false);
+      return;
+    }
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });

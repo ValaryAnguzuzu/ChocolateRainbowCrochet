@@ -34,7 +34,7 @@ function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-pastel-pink to-pastel-purple relative overflow-hidden"
+      className="py-20 bg-warm-cream relative overflow-hidden"
     >
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -84,7 +84,7 @@ function ContactSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Connect & Heal
           </h2>
           <p className="text-xl text-white opacity-90">
@@ -184,7 +184,7 @@ function ContactSection() {
                 <div className="w-20 h-20 bg-gradient-to-br from-pastel-pink to-pastel-purple rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-xl">JP</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">
                   Jasmine Liana Peña
                 </h3>
                 <p className="text-pastel-purple font-medium">

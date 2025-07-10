@@ -24,7 +24,7 @@ function AboutSection() {
   }, [images.length]);
 
   return (
-    <section id="about" className="py-20 bg-warm-cream">
+    <section id="about" className="py-20 bg-pastel-purple">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           {/* Scrolling Name Animation */}
@@ -36,7 +36,7 @@ function AboutSection() {
             viewport={{ once: true }}
           >
             <motion.h1
-              className="text-4xl md:text-6xl font-bold text-gray-800 whitespace-nowrap"
+              className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 whitespace-nowrap"
               animate={{ x: [0, -100, 0] }}
               transition={{
                 duration: 8,
@@ -109,7 +109,7 @@ function AboutSection() {
                 </div>
 
                 {/* Quote Text */}
-                <blockquote className="text-xl md:text-2xl font-medium text-gray-800 leading-relaxed mb-6 pl-8">
+                <blockquote className="text-xl md:text-2xl font-medium text-gray-800 mb-6 leading-relaxed pl-8">
                   "I believe healing is not only possible—it's necessary. And I
                   build bridges where systems have burned them."
                 </blockquote>
@@ -117,7 +117,7 @@ function AboutSection() {
                 {/* Author Info */}
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-lg font-semibold text-gray-800">
+                    <p className="text-lg font-semibold text-gray-800 mb-6">
                       Jasmine Liana Peña
                     </p>
                     <p className="text-pastel-purple font-medium">
@@ -145,7 +145,7 @@ function AboutSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
               A lived experience advocate and creative healing facilitator,
               Jasmine works at the intersection of trauma, healthcare ethics,
               and therapeutic art. She's lived through the very systems she now

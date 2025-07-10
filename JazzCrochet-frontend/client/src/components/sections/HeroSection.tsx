@@ -12,7 +12,7 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-warm-cream via-white to-soft-lavender"
+      className="min-h-screen flex items-center justify-center bg-warm-cream"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -44,7 +44,7 @@ function HeroSection() {
                   <span className="text-white font-bold text-xl">JP</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-800">
+                  <h1 className="text-2xl font-bold text-gray-800 mb-6">
                     Jasmine Peña
                   </h1>
                   <p className="text-pastel-purple font-medium">
@@ -90,7 +90,9 @@ function HeroSection() {
                 boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
               }}
             >
-              <h2 className="text-2xl font-bold mb-4">My Mission</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                My Mission
+              </h2>
               <p className="text-lg leading-relaxed mb-6">
                 "I believe healing is not only possible—it's necessary. And I
                 build bridges where systems have burned them."
@@ -127,7 +129,7 @@ function HeroSection() {
                   <Shield className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">
+                  <h3 className="text-xl font-bold text-gray-800 mb-6">
                     H.U.M.A.N.™ Framework
                   </h3>
                   <p className="text-sm text-gray-600">
@@ -157,7 +159,7 @@ function HeroSection() {
                   <Palette className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">
+                  <h3 className="text-xl font-bold text-gray-800 mb-6">
                     Chocolate Rainbow Crochet
                   </h3>
                   <p className="text-sm text-gray-600">
@@ -187,7 +189,7 @@ function HeroSection() {
                   <Users className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">
+                  <h3 className="text-xl font-bold text-gray-800 mb-6">
                     T.A.T. Program
                   </h3>
                   <p className="text-sm text-gray-600">
