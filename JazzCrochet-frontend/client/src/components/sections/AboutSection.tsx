@@ -1,14 +1,18 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-export default function AboutSection() {
+function AboutSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Array of Jasmine's images (replace with actual image URLs)
   const images = [
-    "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400&q=80",
-    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400&q=80",
-    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400&q=80",
+    "/src/assets/jaz-pic.png",
+    "/src/assets/jaz-pic.png",
+    "/src/assets/jaz-pic.png",
+    "/src/assets/jaz-pic.png",
+    "/src/assets/jaz-pic.png",
+    "/src/assets/jaz-pic.png",
+    "/src/assets/jaz-pic.png",
   ];
 
   // Auto-rotate images every 3 seconds
@@ -154,3 +158,5 @@ export default function AboutSection() {
     </section>
   );
 }
+
+export default AboutSection;
