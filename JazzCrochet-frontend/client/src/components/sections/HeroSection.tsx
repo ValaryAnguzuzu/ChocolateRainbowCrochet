@@ -25,7 +25,7 @@ function HeroSection() {
           >
             {/* Introduction Card */}
             <motion.div
-              className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20"
+              className="bg-pastel-purple backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20"
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}

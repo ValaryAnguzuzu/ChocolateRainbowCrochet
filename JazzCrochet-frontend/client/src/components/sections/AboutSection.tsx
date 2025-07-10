@@ -6,13 +6,13 @@ function AboutSection() {
 
   // Array of Jasmine's images (replace with actual image URLs)
   const images = [
-    "/src/assets/jaz-pic.png",
-    "/src/assets/jaz-pic.png",
-    "/src/assets/jaz-pic.png",
-    "/src/assets/jaz-pic.png",
-    "/src/assets/jaz-pic.png",
-    "/src/assets/jaz-pic.png",
-    "/src/assets/jaz-pic.png",
+    "/src/assets/jaz-logo.png",
+    "/src/assets/jaz-logo.png",
+    "/src/assets/jaz-logo.png",
+    "/src/assets/jaz-logo.png",
+    "/src/assets/jaz-logo.png",
+    "/src/assets/jaz-logo.png",
+    "/src/assets/jaz-logo.png",
   ];
 
   // Auto-rotate images every 3 seconds

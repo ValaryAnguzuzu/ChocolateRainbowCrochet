@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 function App() {
   return (
     <>
+      
       <ScrollToTop />
       <Navigation />
       <main>
