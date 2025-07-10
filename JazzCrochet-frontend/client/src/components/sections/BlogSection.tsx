@@ -10,7 +10,7 @@ import {
   Calendar,
   User,
   ExternalLink,
-  Sparkles,
+  //Sparkles,
 } from "lucide-react";
 
 function BlogSection() {
@@ -218,19 +218,6 @@ function BlogSection() {
                 boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
               }}
             >
-              {/* Featured Badge */}
-              {post.featured && (
-                <motion.div
-                  className="absolute top-4 left-4 z-10 bg-gradient-to-r from-pastel-pink to-pastel-purple text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Sparkles size={12} className="mr-1" />
-                  Featured
-                </motion.div>
-              )}
-
               {/* Blog Image */}
               <div className="relative overflow-hidden h-48">
                 <motion.img

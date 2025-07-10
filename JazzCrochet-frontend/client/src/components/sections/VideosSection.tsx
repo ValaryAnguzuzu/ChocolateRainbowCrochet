@@ -262,7 +262,7 @@ function VideosSection() {
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-gradient-to-r from-pastel-purple to-pastel-pink text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all duration-300"
+            className="bg-gradient-to-br from-pink-400 to-purple-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:opacity-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 15px 35px rgba(0,0,0,0.2)",

@@ -13,8 +13,8 @@ const Navigation: React.FC = () => {
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Blog", href: "#blog" },
-    { label: "Testimonials", href: "#testimonials" },
     { label: "Videos", href: "#videos" },
+    { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -42,10 +42,10 @@ const Navigation: React.FC = () => {
             className="h-15 w-12 object-cover rounded-full border border-pastel-purple bg-red-400 shadow"
           />
           <div className="ml-3 truncate">
-            <span className="text-base font-bold text-white block leading-tight truncate">
+            {/* <span className="text-base font-bold text-white block leading-tight truncate">
               Jasmine Liana Peña
-            </span>
-            <span className="text-xs text-white/80 block leading-tight truncate">
+            </span> */}
+            <span className="text-sm text-white/80 block leading-tight truncate">
               Chocolate Rainbow Crochet
             </span>
           </div>

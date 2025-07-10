@@ -148,7 +148,7 @@ function ContactSection() {
                   onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pastel-purple focus:border-transparent transition-all duration-200"
-                  placeholder="Tell us about your healing journey or interest in our programs..."
+                  placeholder="Share with me your healing journey or interest in my art..."
                   required
                 />
               </div>
@@ -182,7 +182,9 @@ function ContactSection() {
             >
               <div className="text-center mb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-pastel-pink to-pastel-purple rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">JP</span>
+                  <span className="bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center w-16 h-16 text-white font-bold text-2xl">
+                    JP
+                  </span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-6">
                   Jasmine Liana Peña

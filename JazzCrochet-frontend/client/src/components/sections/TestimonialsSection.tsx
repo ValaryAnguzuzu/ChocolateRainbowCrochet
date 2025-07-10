@@ -59,12 +59,16 @@ function TestimonialsSection() {
   ];
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / 2)
+    );
   };
 
   const prevTestimonial = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+      (prevIndex) =>
+        (prevIndex - 1 + Math.ceil(testimonials.length / 2)) %
+        Math.ceil(testimonials.length / 2)
     );
   };
 
@@ -127,33 +131,14 @@ function TestimonialsSection() {
 
         {/* Enhanced Scrollable Cards */}
         <div className="relative">
-          {/* Navigation buttons */}
-          <motion.button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            whileHover={{ scale: 1.1, x: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <ChevronLeft className="text-pastel-purple" size={24} />
-          </motion.button>
-
-          <motion.button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100"
-            whileHover={{ scale: 1.1, x: 2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <ChevronRight className="text-pastel-purple" size={24} />
-          </motion.button>
-
           {/* Scrollable container */}
-          <div className="overflow-hidden mx-20">
+          <div className="overflow-hidden">
             <motion.div
               className="flex transition-transform duration-700 ease-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{ transform: `translateX(-${currentIndex * 50}%)` }}
             >
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-4">
+                <div key={index} className="w-1/2 flex-shrink-0 px-4">
                   <motion.div
                     className="bg-white rounded-3xl p-8 shadow-2xl mx-auto max-w-md relative overflow-hidden border border-gray-100"
                     initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -166,8 +151,8 @@ function TestimonialsSection() {
                     }}
                   >
                     {/* Quote Icon */}
-                    <div className="absolute top-4 right-4 opacity-10">
-                      <Quote size={48} className="text-gray-300" />
+                    <div className="absolute top-4 right-4 opacity-30">
+                      <Quote size={48} className="text-gray-800" />
                     </div>
 
                     {/* Profile Section */}
@@ -233,43 +218,53 @@ function TestimonialsSection() {
             </motion.div>
           </div>
 
-          {/* Enhanced Dots Indicator */}
-          <div className="flex justify-center mt-12 space-x-3">
-            {testimonials.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-pastel-purple scale-125 shadow-lg"
-                    : "bg-gray-300 hover:bg-pastel-pink"
-                }`}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            ))}
-          </div>
-        </div>
+          {/* Pagination */}
+          <motion.div
+            className="flex items-center justify-center space-x-4 mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <motion.button
+              onClick={prevTestimonial}
+              className="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              whileHover={{ scale: 1.1, x: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ChevronLeft className="text-pastel-purple" size={24} />
+            </motion.button>
 
-        {/* Progress Bar */}
-        <motion.div
-          className="mt-8 max-w-md mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-gray-200 rounded-full h-2">
-            <motion.div
-              className="bg-gradient-to-r from-pastel-pink to-pastel-purple h-2 rounded-full"
-              initial={{ width: 0 }}
-              animate={{
-                width: `${((currentIndex + 1) / testimonials.length) * 100}%`,
-              }}
-              transition={{ duration: 0.5 }}
-            />
-          </div>
-        </motion.div>
+            {/* Page Indicators */}
+            <div className="flex space-x-2">
+              {Array.from(
+                { length: Math.ceil(testimonials.length / 2) },
+                (_, i) => (
+                  <motion.button
+                    key={i}
+                    onClick={() => setCurrentIndex(i)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      i === currentIndex
+                        ? "bg-pastel-purple scale-125 shadow-lg"
+                        : "bg-gray-300 hover:bg-pastel-pink"
+                    }`}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                )
+              )}
+            </div>
+
+            <motion.button
+              onClick={nextTestimonial}
+              className="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              whileHover={{ scale: 1.1, x: 2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ChevronRight className="text-pastel-purple" size={24} />
+            </motion.button>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

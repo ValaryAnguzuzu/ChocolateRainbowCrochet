@@ -36,15 +36,15 @@ function AboutSection() {
             viewport={{ once: true }}
           >
             <motion.h1
-              className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 whitespace-nowrap"
-              animate={{ x: [0, -100, 0] }}
+              className="text-2xl md:text-4xl font-bold text-gray-800 mb-6 whitespace-nowrap"
+              animate={{ x: [0, -4, 0] }}
               transition={{
-                duration: 8,
+                duration: 4,
                 repeat: Infinity,
                 ease: "linear",
               }}
             >
-              Jasmine Liana Peña • Jasmine Liana Peña • Jasmine Liana Peña •
+              Chocolate Rainbow Crochet 
             </motion.h1>
           </motion.div>
 
