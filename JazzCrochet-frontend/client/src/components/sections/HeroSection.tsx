@@ -7,12 +7,19 @@ import {
   Shield,
   ArrowRight,
 } from "lucide-react";
+import bgImg from "../../assets/bg-img.png";
 
 function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-warm-cream"
+      className="min-h-screen flex items-center justify-center bg-warm-cream relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -40,7 +47,7 @@ function HeroSection() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-pastel-pink to-pastel-purple rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-500  rounded-full flex items-center justify-center mr-4 shadow-lg">
                   <span className="text-white font-bold text-xl">JP</span>
                 </div>
                 <div>
