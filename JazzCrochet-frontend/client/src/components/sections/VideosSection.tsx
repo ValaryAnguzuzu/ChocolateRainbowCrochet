@@ -68,7 +68,7 @@ function VideosSection() {
   return (
     <section
       id="videos"
-      className="py-20 bg-pastel-purple relative overflow-hidden"
+      className="py-20 bg-warm-cream relative overflow-hidden"
     >
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
