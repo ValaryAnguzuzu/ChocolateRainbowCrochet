@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 //import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoImage from "../../assets/jaz-logo.png";
+import logoImage from "../../assets/pena-pic.png";
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

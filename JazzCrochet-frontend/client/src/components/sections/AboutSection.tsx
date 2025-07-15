@@ -10,9 +10,9 @@ function AboutSection() {
     "/src/assets/pena-pic4.jpg",
     "/src/assets/bg-img.png",
     "/src/assets/pena-pic3.jpg",
-    "/src/assets/jaz-logo.png",
-    "/src/assets/SISTAMoms.png",
     "/src/assets/pena-pic2.JPG",
+    "/src/assets/pena-pic5.jpg",
+    "/src/assets/jaz-logo.png",
   ];
 
   // Auto-rotate images every 3 seconds
@@ -32,7 +32,7 @@ function AboutSection() {
             key={currentImageIndex}
             src={images[currentImageIndex]}
             alt={`Jasmine Peña - Background ${currentImageIndex + 1}`}
-            className="w-full h-full object-cover blur-[0px] opacity-20"
+            className="w-full h-full object-cover blur-[1px] opacity-40"
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 0.3, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
@@ -88,54 +88,60 @@ function AboutSection() {
               </span>
             </div>
 
-            {/* Quote Card */}
+            {/* Floating Quote Text Overlay */}
             <motion.div
-              className="max-w-4xl mx-auto"
+              className="max-w-4xl mx-auto mb-12"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
-                <div className="relative">
-                  {/* Quote Icon */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-pastel-pink to-pastel-purple rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                  </div>
-
-                  {/* Quote Text */}
-                  <blockquote className="text-xl md:text-2xl font-medium text-gray-800 mb-6 leading-relaxed pl-8">
-                    "I believe healing is not only possible—it's necessary. And
-                    I build bridges where systems have burned them."
-                  </blockquote>
-
-                  {/* Author Info */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-lg font-semibold text-gray-800 mb-6">
-                        Jasmine Liana Peña
-                      </p>
-                      <p className="text-pastel-purple font-medium">
-                        Founder & Healing Facilitator
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        Chocolate Rainbow Crochet
-                      </p>
-                    </div>
-
-                    {/* Decorative Element */}
-                    <div className="hidden md:block">
-                      <div className="w-16 h-16 bg-gradient-to-br from-pastel-pink to-pastel-purple rounded-full opacity-20"></div>
-                    </div>
-                  </div>
+              {/* Quote Icon */}
+              <motion.div
+                className="flex justify-center mb-6"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-pastel-pink to-pastel-purple rounded-full flex items-center justify-center shadow-lg">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
                 </div>
+              </motion.div>
+
+              {/* Quote Text with Backdrop Blur */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-2xl"></div>
+                <blockquote className="relative text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed px-8 py-6 text-shadow-lg">
+                  "I believe healing is not only possible—it's necessary. And I
+                  build bridges where systems have burned them."
+                </blockquote>
               </div>
+
+              {/* Author Info */}
+              <motion.div
+                className="mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-xl font-semibold text-white mb-2 text-shadow-md">
+                  Jasmine Liana Peña
+                </p>
+                <p className="text-pastel-pink font-medium text-shadow-md">
+                  Founder & Healing Facilitator
+                </p>
+                <p className="text-sm text-gray-200 text-shadow-md">
+                  Chocolate Rainbow Crochet
+                </p>
+              </motion.div>
             </motion.div>
 
             {/* Additional Info */}
@@ -146,14 +152,16 @@ function AboutSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                A lived experience advocate and creative healing facilitator,
-                Jasmine works at the intersection of trauma, healthcare ethics,
-                and therapeutic art. She's lived through the very systems she
-                now helps transform—turning experiences into tools, trainings,
-                and healing programs that restore dignity, voice, and
-                possibility.
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                <p className="text-lg text-gray-800 leading-relaxed">
+                  A lived experience advocate and creative healing facilitator,
+                  Jasmine works at the intersection of trauma, healthcare
+                  ethics, and therapeutic art. She's lived through the very
+                  systems she now helps transform—turning experiences into
+                  tools, trainings, and healing programs that restore dignity,
+                  voice, and possibility.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
