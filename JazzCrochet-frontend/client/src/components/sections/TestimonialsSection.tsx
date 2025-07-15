@@ -58,18 +58,14 @@ function TestimonialsSection() {
     },
   ];
 
+  const pageCount = testimonials.length;
+
   const nextTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / 2)
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % pageCount);
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + Math.ceil(testimonials.length / 2)) %
-        Math.ceil(testimonials.length / 2)
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + pageCount) % pageCount);
   };
 
   // Auto-advance testimonials
@@ -78,6 +74,7 @@ function TestimonialsSection() {
       nextTestimonial();
     }, 5000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
 
   return (
@@ -129,142 +126,125 @@ function TestimonialsSection() {
           </p>
         </motion.div>
 
-        {/* Enhanced Scrollable Cards */}
-        <div className="relative">
-          {/* Scrollable container */}
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex transition-transform duration-700 ease-out"
-              style={{ transform: `translateX(-${currentIndex * 50}%)` }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="w-1/2 flex-shrink-0 px-4">
-                  <motion.div
-                    className="bg-white rounded-3xl p-8 shadow-2xl mx-auto max-w-md relative overflow-hidden border border-gray-100"
-                    initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      scale: 1.02,
-                      boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
-                    }}
-                  >
-                    {/* Quote Icon */}
-                    <div className="absolute top-4 right-4 opacity-30">
-                      <Quote size={48} className="text-gray-800" />
-                    </div>
-
-                    {/* Profile Section */}
-                    <div className="text-center mb-6">
-                      <motion.div
-                        className="w-24 h-24 bg-white rounded-full mx-auto mb-4 p-2 shadow-lg"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover rounded-full"
-                        />
-                      </motion.div>
-
-                      {/* Star Rating */}
-                      <div className="flex justify-center mb-3">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <motion.svg
-                            key={i}
-                            className="w-5 h-5 text-yellow-300 fill-current"
-                            viewBox="0 0 20 20"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: i * 0.1 }}
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </motion.svg>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Quote */}
-                    <motion.p
-                      className="text-lg mb-6 text-center leading-relaxed font-medium text-gray-800"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      "{testimonial.quote}"
-                    </motion.p>
-
-                    {/* Author Info */}
-                    <motion.div
-                      className="text-center border-t border-gray-200 pt-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                      viewport={{ once: true }}
-                    >
-                      <h4 className="font-bold text-xl mb-1 text-gray-800">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-sm font-medium text-gray-600">
-                        {testimonial.title}
-                      </p>
-                    </motion.div>
-                  </motion.div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Pagination */}
+        {/* Single Centered Card */}
+        <div className="flex justify-center items-center min-h-[400px]">
           <motion.div
-            className="flex items-center justify-center space-x-4 mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            viewport={{ once: true }}
+            key={currentIndex}
+            className="bg-white rounded-3xl p-8 shadow-2xl mx-auto max-w-md w-full relative overflow-hidden border border-gray-100"
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 50, scale: 0.9 }}
+            transition={{ duration: 0.8 }}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
+            }}
           >
-            <motion.button
-              onClick={prevTestimonial}
-              className="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              whileHover={{ scale: 1.1, x: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ChevronLeft className="text-pastel-purple" size={24} />
-            </motion.button>
-
-            {/* Page Indicators */}
-            <div className="flex space-x-2">
-              {Array.from(
-                { length: Math.ceil(testimonials.length / 2) },
-                (_, i) => (
-                  <motion.button
-                    key={i}
-                    onClick={() => setCurrentIndex(i)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      i === currentIndex
-                        ? "bg-pastel-purple scale-125 shadow-lg"
-                        : "bg-gray-300 hover:bg-pastel-pink"
-                    }`}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
-                  />
-                )
-              )}
+            {/* Quote Icon */}
+            <div className="absolute top-4 right-4 opacity-30">
+              <Quote size={48} className="text-gray-800" />
             </div>
 
-            <motion.button
-              onClick={nextTestimonial}
-              className="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              whileHover={{ scale: 1.1, x: 2 }}
-              whileTap={{ scale: 0.95 }}
+            {/* Profile Section */}
+            <div className="text-center mb-6">
+              <motion.div
+                className="w-24 h-24 bg-white rounded-full mx-auto mb-4 p-2 shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={testimonials[currentIndex].image}
+                  alt={testimonials[currentIndex].name}
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </motion.div>
+
+              {/* Star Rating */}
+              <div className="flex justify-center mb-3">
+                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                  <motion.svg
+                    key={i}
+                    className="w-5 h-5 text-yellow-300 fill-current"
+                    viewBox="0 0 20 20"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </motion.svg>
+                ))}
+              </div>
+            </div>
+
+            {/* Quote */}
+            <motion.p
+              className="text-lg mb-6 text-center leading-relaxed font-medium text-gray-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
             >
-              <ChevronRight className="text-pastel-purple" size={24} />
-            </motion.button>
+              "{testimonials[currentIndex].quote}"
+            </motion.p>
+
+            {/* Author Info */}
+            <motion.div
+              className="text-center border-t border-gray-200 pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <h4 className="font-bold text-xl mb-1 text-gray-800">
+                {testimonials[currentIndex].name}
+              </h4>
+              <p className="text-sm font-medium text-gray-600">
+                {testimonials[currentIndex].title}
+              </p>
+            </motion.div>
           </motion.div>
         </div>
+
+        {/* Pagination */}
+        <motion.div
+          className="flex items-center justify-center space-x-4 mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <motion.button
+            onClick={prevTestimonial}
+            className="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+            whileHover={{ scale: 1.1, x: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ChevronLeft className="text-pastel-purple" size={24} />
+          </motion.button>
+
+          {/* Page Indicators */}
+          <div className="flex space-x-2">
+            {Array.from({ length: pageCount }, (_, i) => (
+              <motion.button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  i === currentIndex
+                    ? "bg-pastel-purple scale-125 shadow-lg"
+                    : "bg-gray-300 hover:bg-pastel-pink"
+                }`}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              />
+            ))}
+          </div>
+
+          <motion.button
+            onClick={nextTestimonial}
+            className="bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+            whileHover={{ scale: 1.1, x: 2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ChevronRight className="text-pastel-purple" size={24} />
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
