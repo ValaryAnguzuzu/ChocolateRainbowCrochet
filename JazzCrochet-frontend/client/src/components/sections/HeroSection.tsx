@@ -49,7 +49,7 @@ function HeroSection() {
                     Jasmine Peña
                   </h1>
                   <p className="text-pastel-purple font-medium text-xs lg:text-base">
-                    Lived Experience Advocate & Healing Facilitator
+                    Patient advocate, Creative healer
                   </p>
                 </div>
               </motion.div>
@@ -60,8 +60,9 @@ function HeroSection() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                "My name is Jasmine Peña, and I'm a lived experience advocate,
-                healing facilitator, and founder of{" "}
+                Welcome to my official platform. My name is Jasmine, and I am a
+                trauma-informed educator living with disability and rooted in
+                truth. I am the founder of{" "}
                 <motion.span className="font-semibold text-pastel-purple">
                   {"Jasmine Liana Livingston Peña, LLC."
                     .split("")
@@ -79,8 +80,9 @@ function HeroSection() {
                       </motion.span>
                     ))}
                 </motion.span>{" "}
-                I work at the intersection of trauma, healthcare ethics, and
-                creative healing."
+                My work is dedicated to reshaping healthcare, amplifying lived
+                experience, and healing intergenerational trauma through the
+                power of humanity.
               </motion.p>
 
               <motion.div
@@ -90,7 +92,7 @@ function HeroSection() {
                 transition={{ delay: 1 }}
               >
                 <Sparkles className="text-pastel-pink mr-2" size={16} />
-                <span>Founder of H.U.M.A.N.™ Framework</span>
+                <span>Chocolate Rainbow Crochet</span>
               </motion.div>
             </motion.div>
 

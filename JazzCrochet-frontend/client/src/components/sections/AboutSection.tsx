@@ -55,7 +55,7 @@ function AboutSection() {
             >
               <motion.h1
                 className="text-2xl md:text-4xl font-bold text-gray-800 mb-6 whitespace-nowrap"
-                animate={{ x: [0, -4, 0] }}
+                animate={{ x: [0, -5, 0] }}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
@@ -82,11 +82,11 @@ function AboutSection() {
             </div>
 
             {/* Image Counter */}
-            <div className="text-center mb-8">
+            {/* <div className="text-center mb-8">
               <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-800">
                 {currentImageIndex + 1} / {images.length}
               </span>
-            </div>
+            </div> */}
 
             {/* Floating Quote Text Overlay */}
             <motion.div
@@ -97,7 +97,7 @@ function AboutSection() {
               viewport={{ once: true }}
             >
               {/* Quote Icon */}
-              <motion.div
+              {/* <motion.div
                 className="flex justify-center mb-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -113,35 +113,24 @@ function AboutSection() {
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               {/* Quote Text with Backdrop Blur */}
               <div className="relative">
                 <div className="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-2xl"></div>
                 <blockquote className="relative text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed px-8 py-6 text-shadow-lg">
-                  "I believe healing is not only possible—it's necessary. And I
-                  build bridges where systems have burned them."
+                  A trauma-informed mentorship and creative healing program that
+                  uses fiber arts—like crochet, fabric design, and painting—as
+                  tools for emotional restoration, self-expression, and
+                  community connection. This initiative provides structured yet
+                  soulful sessions that blend creativity, mindfulness, and
+                  reflection. The goal is to create safe, joy-filled
+                  environments where participants, especially youth, elders, and
+                  individuals navigating trauma or disability, can gently
+                  process emotions, reclaim their power, and stitch their way
+                  toward healing.
                 </blockquote>
               </div>
-
-              {/* Author Info */}
-              <motion.div
-                className="mt-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-xl font-semibold text-white mb-2 text-shadow-md">
-                  Jasmine Liana Peña
-                </p>
-                <p className="text-pastel-pink font-medium text-shadow-md">
-                  Founder & Healing Facilitator
-                </p>
-                <p className="text-sm text-gray-200 text-shadow-md">
-                  Chocolate Rainbow Crochet
-                </p>
-              </motion.div>
             </motion.div>
 
             {/* Additional Info */}
@@ -154,12 +143,10 @@ function AboutSection() {
             >
               <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <p className="text-lg text-gray-800 leading-relaxed">
-                  A lived experience advocate and creative healing facilitator,
-                  Jasmine works at the intersection of trauma, healthcare
-                  ethics, and therapeutic art. She's lived through the very
-                  systems she now helps transform—turning experiences into
-                  tools, trainings, and healing programs that restore dignity,
-                  voice, and possibility.
+                  We especially welcome those who have felt unseen, unheard, or
+                  misunderstood, and provide a space where being different is a
+                  <span className="font-bold"> STRENGTH</span>, not a
+                  limitation.
                 </p>
               </div>
             </motion.div>

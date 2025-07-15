@@ -87,10 +87,30 @@ function ContactSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Connect & Heal
           </h2>
-          <p className="text-xl text-white opacity-90">
-            Ready to begin your healing journey or learn more about our
-            programs?
-          </p>
+          {/* <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Here, art is not confined; it is felt, lived, and shared! Ready to
+            begin your healing journey or learn more about our programs?
+          </p> */}
+          <motion.div
+            className="overflow-hidden mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              animate={{ x: [0, -15, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              Here, art is not confined; it is felt, lived, and shared! Ready to
+              begin your healing journey or learn more about our programs?
+            </motion.h1>
+          </motion.div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">

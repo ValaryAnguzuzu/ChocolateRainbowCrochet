@@ -15,8 +15,8 @@ function Home() {
       <AboutSection />
       <ServicesSection />
       <BlogSection />
-      <TestimonialsSection />
       <VideosSection />
+      <TestimonialsSection />
       <ContactSection />
     </>
   );

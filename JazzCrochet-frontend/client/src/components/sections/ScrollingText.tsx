@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 
 function ScrollingText() {
   const scrollingContent = [
-    "H.U.M.A.N.™ Framework",
     "Chocolate Rainbow Crochet",
     "Therapeutic Art & Thoughtfulness",
-    "Lived Experience Advocacy",
-    "Healthcare Ethics",
+    "Lived Experience Leadership",
+    "Advocacy",
     "Trauma-Informed Care",
     "Creative Healing",
-    "Community Transformation",
+    "Community Building",
     "Mindful Healing",
     "Restoring Dignity & Voice",
   ];
