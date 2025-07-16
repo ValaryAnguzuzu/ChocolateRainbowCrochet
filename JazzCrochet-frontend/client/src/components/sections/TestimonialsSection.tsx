@@ -7,28 +7,25 @@ function TestimonialsSection() {
 
   const testimonials = [
     {
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
+      image: "/src/assets/yvonne.jpg",
       quote:
         "Jasmine's H.U.M.A.N.™ framework completely transformed how our team approaches patient care. The training was profound and practical.",
-      name: "Dr. Sarah Chen",
-      title: "Healthcare Administrator",
+      name: "Yvonne Livingston",
+      title: "Founder: SISTAMOms LLC",
       gradient: "from-pastel-pink to-pastel-purple",
       rating: 5,
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
+      image: "/src/assets/yvonne.jpg",
       quote:
         "The Chocolate Rainbow Crochet program gave me a safe space to process my trauma while creating something beautiful. Life-changing experience.",
-      name: "Maria Rodriguez",
-      title: "Program Participant",
+      name: "Amanda Ashley Armour",
+      title: "Co-Founder Sistamoms LLC",
       gradient: "from-pastel-purple to-soft-lavender",
       rating: 5,
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
+      image: "/src/assets/yvonne.jpg",
       quote:
         "Jasmine's advocacy work and therapeutic art programs have created ripples of healing throughout our community. Truly inspiring work.",
       name: "James Thompson",
@@ -37,8 +34,7 @@ function TestimonialsSection() {
       rating: 5,
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
+      image: "/src/assets/yvonne.jpg",
       quote:
         "Through Jasmine's guidance, I found my voice and strength. Her programs are not just about healing—they're about empowerment.",
       name: "Lisa Chang",
@@ -47,8 +43,7 @@ function TestimonialsSection() {
       rating: 5,
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
+      image: "/src/assets/yvonne.jpg",
       quote:
         "The combination of art therapy and advocacy training has revolutionized our approach to community healing. Jasmine is a true visionary.",
       name: "Michael Davis",
@@ -121,16 +116,33 @@ function TestimonialsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Voices of Healing
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Stories from our community of healing and transformation
-          </p>
+
+          <motion.div
+            className="overflow-hidden mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              animate={{ x: [0, -15, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              Stories from our community of healing and transformation
+            </motion.h1>
+          </motion.div>
         </motion.div>
 
         {/* Single Centered Card */}
         <div className="flex justify-center items-center min-h-[400px]">
           <motion.div
             key={currentIndex}
-            className="bg-white rounded-3xl p-8 shadow-2xl mx-auto max-w-md w-full relative overflow-hidden border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-2xl mx-auto w-full max-w-full min-w-0 md:max-w-2xl md:min-w-[500px] relative overflow-hidden border border-gray-100"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
