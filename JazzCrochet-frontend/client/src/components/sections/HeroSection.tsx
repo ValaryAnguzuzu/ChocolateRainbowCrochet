@@ -60,7 +60,7 @@ function HeroSection() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                Welcome to my official platform. My name is Jasmine, and I am a
+                Welcome to my official platform. I am a
                 trauma-informed educator living with disability and rooted in
                 truth. I am the founder of{" "}
                 <motion.span className="font-semibold text-pastel-purple">

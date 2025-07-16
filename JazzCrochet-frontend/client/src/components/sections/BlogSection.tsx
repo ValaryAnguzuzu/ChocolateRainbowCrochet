@@ -197,10 +197,27 @@ function BlogSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Insights & Stories
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore my journey, insights, and the transformative power of
-            healing through advocacy and art
-          </p>
+         
+          <motion.div
+            className="overflow-hidden mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              animate={{ x: [0, -15, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              Explore my journey, insights, and the transformative power of
+              healing through advocacy and art
+            </motion.h1>
+          </motion.div>
         </motion.div>
 
         {/* Blog Posts Grid */}

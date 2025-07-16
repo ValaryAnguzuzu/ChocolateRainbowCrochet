@@ -122,10 +122,27 @@ function VideosSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Healing in Action
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Watch our programs and testimonials in action, showcasing the
-            transformative power of therapeutic art
-          </p>
+         
+          <motion.div
+            className="overflow-hidden mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h1
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              animate={{ x: [0, -15, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              Watch our programs and testimonials in action, showcasing the
+              transformative power of therapeutic art
+            </motion.h1>
+          </motion.div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

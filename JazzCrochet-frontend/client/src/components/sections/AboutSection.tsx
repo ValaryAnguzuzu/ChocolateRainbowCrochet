@@ -45,26 +45,20 @@ function AboutSection() {
       <div className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            {/* Scrolling Name Animation */}
-            <motion.div
-              className="overflow-hidden mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Chocolate Rainbow Crochet
+            </h2>
+            <motion.p
+              className="text-2xl text-gray-600 max-w-2xl mx-auto mb-8"
+              animate={{ x: [0, -15, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
             >
-              <motion.h1
-                className="text-2xl md:text-4xl font-bold text-gray-800 mb-6 whitespace-nowrap"
-                animate={{ x: [0, -5, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
-                Chocolate Rainbow Crochet
-              </motion.h1>
-            </motion.div>
+              What is it?
+            </motion.p>
 
             {/* Image Navigation Dots */}
             <div className="flex justify-center mb-8 space-x-2">
