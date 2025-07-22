@@ -87,7 +87,7 @@ function ContactSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Connect & Heal
           </h2>
-          
+
           <motion.div
             className="overflow-hidden mb-8"
             initial={{ opacity: 0, y: 20 }}
@@ -110,10 +110,10 @@ function ContactSection() {
           </motion.div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="flex flex-col gap-y-8 md:grid md:grid-cols-2 md:gap-12">
           {/* Contact Form - Floating Card */}
           <motion.div
-            className="bg-white rounded-3xl p-8 shadow-2xl border border-white/20 backdrop-blur-sm"
+            className="bg-white rounded-3xl p-4 sm:p-8 shadow-2xl border border-white/20 backdrop-blur-sm w-full max-w-full"
             initial={{ opacity: 0, x: -50, y: 20 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -182,7 +182,7 @@ function ContactSection() {
 
           {/* Contact Info Cards - Floating */}
           <motion.div
-            className="space-y-6"
+            className="flex flex-col gap-y-8 w-full max-w-full"
             initial={{ opacity: 0, x: 50, y: 20 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -190,7 +190,7 @@ function ContactSection() {
           >
             {/* Business Card */}
             <motion.div
-              className="bg-white rounded-3xl p-8 shadow-2xl border border-white/20 backdrop-blur-sm"
+              className="bg-white rounded-3xl p-4 sm:p-8 shadow-2xl border border-white/20 backdrop-blur-sm w-full max-w-full"
               whileHover={{
                 y: -5,
                 boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
@@ -253,7 +253,7 @@ function ContactSection() {
 
             {/* Social Media Card */}
             <motion.div
-              className="bg-white rounded-3xl p-8 shadow-2xl border border-white/20 backdrop-blur-sm"
+              className="bg-white rounded-3xl p-4 sm:p-8 shadow-2xl border border-white/20 backdrop-blur-sm w-full max-w-full"
               whileHover={{
                 y: -5,
                 boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
@@ -263,7 +263,7 @@ function ContactSection() {
               <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
                 Connect on Social Media
               </h3>
-              <div className="flex justify-center space-x-4">
+              <div className="flex flex-wrap justify-center gap-4">
                 <motion.a
                   href="https://instagram.com/Jaezee79"
                   target="_blank"

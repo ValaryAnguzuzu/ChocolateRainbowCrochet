@@ -4,6 +4,7 @@ import React, { useState } from "react";
 //import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logoImage from "../../assets/pena-pic.png";
+import { Link } from "react-router-dom";
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,7 @@ const Navigation: React.FC = () => {
     { label: "Services", href: "#services" },
     { label: "Blog", href: "#blog" },
     { label: "Videos", href: "#videos" },
+    { label: "Partners", href: "/partners" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ];
@@ -53,15 +55,25 @@ const Navigation: React.FC = () => {
 
         {/* Desktop Navigation (right) */}
         <div className="hidden md:flex items-center space-x-8 flex-1 justify-end">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollTo(item.href)}
-              className="text-white hover:text-yellow-200 transition-colors duration-200 font-medium px-3 py-1 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-200"
-            >
-              {item.label}
-            </button>
-          ))}
+          {navItems.map((item) =>
+            item.label === "Partners" ? (
+              <Link
+                key={item.label}
+                to="/partners"
+                className="text-white hover:text-yellow-200 transition-colors duration-200 font-medium px-3 py-1 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-200"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <button
+                key={item.label}
+                onClick={() => scrollTo(item.href)}
+                className="text-white hover:text-yellow-200 transition-colors duration-200 font-medium px-3 py-1 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-200"
+              >
+                {item.label}
+              </button>
+            )
+          )}
         </div>
 
         {/* Mobile Menu Button (right) */}
@@ -79,15 +91,26 @@ const Navigation: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 border-t border-gray-200 backdrop-blur-md shadow-lg">
           <div className="px-4 py-2 space-y-2">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollTo(item.href)}
-                className="block w-full text-left py-2 px-4 text-white hover:text-yellow-200 hover:bg-white/10 rounded-md transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.label === "Partners" ? (
+                <Link
+                  key={item.label}
+                  to="/partners"
+                  className="block w-full text-left py-2 px-4 text-white hover:text-yellow-200 hover:bg-white/10 rounded-md transition-colors duration-200 font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => scrollTo(item.href)}
+                  className="block w-full text-left py-2 px-4 text-white hover:text-yellow-200 hover:bg-white/10 rounded-md transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </div>
         </div>
       )}

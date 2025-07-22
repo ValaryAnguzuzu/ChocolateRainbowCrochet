@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Play, ExternalLink, Clock, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 function VideosSection() {
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const videos = [
     {
-      image:
-        "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
+      image: "/src/assets/video18.mp4",
       title: "Chocolate Rainbow Crochet Workshop",
       description:
         "See how our therapeutic crochet program helps participants process trauma through creative expression.",
@@ -14,8 +16,7 @@ function VideosSection() {
       views: "2.4K",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
+      image: "/src/assets/video17.mp4",
       title: "T.A.T. Program Overview",
       description:
         "Learn about our Therapeutic Art & Thoughtfulness program and its impact on healing.",
@@ -24,8 +25,7 @@ function VideosSection() {
       views: "1.8K",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
+      image: "/src/assets/video14.mp4",
       title: "H.U.M.A.N.™ Framework Training",
       description:
         "Discover how healthcare providers are transforming their practice with our framework.",
@@ -34,8 +34,7 @@ function VideosSection() {
       views: "3.2K",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
+      image: "/src/assets/video15.mp4",
       title: "Mindful Healing Practices",
       description:
         "Explore mindfulness techniques integrated into our therapeutic art programs.",
@@ -44,8 +43,7 @@ function VideosSection() {
       views: "1.9K",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
+      image: "/src/assets/video22.mp4",
       title: "Community Healing Event",
       description:
         "Join us for a community healing event showcasing the power of collective creativity.",
@@ -54,8 +52,7 @@ function VideosSection() {
       views: "2.7K",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250",
+      image: "/src/assets/video1.mp4",
       title: "Nature-Based Healing",
       description:
         "Experience the healing power of nature integrated with our therapeutic practices.",
@@ -122,7 +119,7 @@ function VideosSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Healing in Action
           </h2>
-         
+
           <motion.div
             className="overflow-hidden mb-8"
             initial={{ opacity: 0, y: 20 }}
@@ -159,39 +156,70 @@ function VideosSection() {
                 scale: 1.02,
                 boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
               }}
+              onMouseEnter={() => {
+                const vid = videoRefs.current[index];
+                if (vid) {
+                  vid.currentTime = 0;
+                  vid.muted = true;
+                  vid.play();
+                }
+              }}
+              onMouseLeave={() => {
+                const vid = videoRefs.current[index];
+                if (vid) {
+                  vid.pause();
+                  vid.currentTime = 0;
+                }
+              }}
             >
               {/* Enhanced Video Thumbnail */}
               <div className="relative overflow-hidden">
-                <motion.img
+                <video
+                  ref={(el) => {
+                    videoRefs.current[index] = el;
+                  }}
                   src={video.image}
-                  alt={video.title}
                   className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                  controls={false}
+                  muted
                 />
 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
                 {/* Play Button with Animation */}
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                <Link
+                  to={`/videos#${
+                    video.image
+                      ? video.image.split("/").pop()?.replace(".mp4", "")
+                      : `video${index + 1}`
+                  }`}
                 >
                   <motion.div
-                    className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30"
-                    animate={{
-                      scale: [1, 1.05, 1],
-                      opacity: [0.8, 1, 0.8],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
+                    className="absolute inset-0 flex items-center justify-center"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <Play className="text-white ml-1" size={32} fill="white" />
+                    <motion.div
+                      className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30"
+                      animate={{
+                        scale: [1, 1.05, 1],
+                        opacity: [0.8, 1, 0.8],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Play
+                        className="text-white ml-1"
+                        size={32}
+                        fill="white"
+                      />
+                    </motion.div>
                   </motion.div>
-                </motion.div>
+                </Link>
 
                 {/* Video Duration Badge */}
                 <div className="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded-lg text-sm font-medium backdrop-blur-sm">
@@ -278,16 +306,18 @@ function VideosSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            className="bg-gradient-to-br from-pink-400 to-purple-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:opacity-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 15px 35px rgba(0,0,0,0.2)",
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View All Videos
-          </motion.button>
+          <Link to="/videos">
+            <motion.button
+              className="bg-gradient-to-br from-pink-400 to-purple-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:opacity-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 15px 35px rgba(0,0,0,0.2)",
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore All Videos
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>
